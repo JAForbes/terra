@@ -1,0 +1,31 @@
+Okay, it works! How to build it?
+
+Do I use a MVC approach.  Because it is more of an "App" than a game.
+There is not a lot of movement.  If each game object is a DIV, then I get
+a lot of phone compatibility for free (ie touch).
+
+I'm not thinking of using CSS really.  But this isn't a performance intensive thing.
+
+Also, I may want the AI to be written server side, so I can swap it out
+
+Moving things generally, is much easier on canvas.
+
+I'm going with canvas, because why not.
+
+Should I make a node webkit version with multiplayer?
+
+If this is multiplayer, how will it work?  Where does each code go?
+
+
+If this is going to be multiplayer.  The clients should be dumb.  They just receive the other ships state.
+
+
+//client
+fire.onclick = function(){
+	socket.emit('move', 'F')
+}
+
+//client view
+socket.on('move', function(newMe,newOther){
+  newMe.health > me.health && damageAnimation()
+})

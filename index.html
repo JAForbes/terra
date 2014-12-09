@@ -1,0 +1,131 @@
+<style>
+
+@font-face {
+  font-family: 'Venus Rising'; /*a name to be used later*/
+  src: url('font/venus rising rg.ttf'); /*URL to font*/
+}
+@font-face {
+  font-family: 'PCap'; /*a name to be used later*/
+  src: url('font/PCap Terminal.otf'); /*URL to font*/
+}
+
+body {
+  margin: 0;
+  background-color: #222;
+  color: white;
+  font-family: PCap;
+  font-size: 1.5em;
+}
+h1 {
+  margin: 1%;
+  font-family: 'Venus Rising';
+}
+.action {
+  font-size: 2em;
+  cursor: default;
+  user-select: none;
+}
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.choice {
+  color: #82ffe2;
+  z-index: 100;
+}
+.disabled {
+  color: grey;
+}
+
+.X {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.N {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.NE {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: auto;
+}
+.NW {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+}
+.S {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.SE {
+  position: absolute;
+  bottom:0;
+  right: 0;
+  margin: auto;
+}
+.SW {
+  position: absolute;
+  left:0;
+  bottom: 0;
+  margin: auto;
+}
+.E {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.W {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+</style>
+
+<body></body>
+
+<script src='node_modules/lodash/dist/lodash.min.js'></script>
+<script src='node_modules/jquery/dist/jquery.min.js'></script>
+<script src='node_modules/backbone/backbone-min.js'></script>
+<script src='node_modules/ramda/ramda.min.js'></script>
+
+<script src='models/ship.js'></script>
+<script src='models/world.js'></script>
+<script src='views/ship.js'></script>
+<script src='views/world.js'></script>
+<script src='views/choices.js'></script>
+<script src='views/stats.js'></script>
+<script src='views/end.js'></script>
+<audio id='charge1' src='snd/46492__phreaksaccount__shields1.mp3'></audio>
+<audio id='charge2' src='snd/46494__phreaksaccount__shields3.mp3'></audio>
+<audio id='shoot1' src='snd/49695__ejfortin__energy-whip-2.mp3'></audio>
+<audio id='shoot2' src='snd/174462__yottasounds__power-up-001.mp3'></audio>
+<audio id='shield' src='snd/198969__thehorriblejoke__wub-wub-wub.mp3'></audio>
+<audio id='music' src='snd/251939__orangefreesounds__life-in-space-synth-loop.mp3'></audio>
+<audio id='damage' src='snd/37988__kathol__blast.mp3'></audio>
+<audio id='lose' src='snd/123121__dj-chronos__force-field-very-low-end.mp3'></audio>
+<audio id='win' src='snd/220173__gameaudio__spacey-1up-power-up.mp3'><audio>
+<script src='app.js'></script>
