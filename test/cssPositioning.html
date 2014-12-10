@@ -1,0 +1,20 @@
+<h1>CSS Positioning</h1>
+<a href='../test'>Back</a>
+<img id='idle' src='../img/ship2/idle.png' ></img>
+<canvas id='can'></canvas>
+<script>
+/*jshint asi:true */
+con = can.getContext('2d')
+loop = function(){
+	var x = Math.random()*100
+	var y = Math.random()*100
+	idle.style.cssText = [
+	  "position: absolute",
+	  "top: "+x+"px",
+	  "left: "+y+"px"
+
+	].join('; ')
+	requestAnimationFrame(loop)
+}
+loop()
+</script>
