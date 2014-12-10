@@ -74,7 +74,7 @@ Views.Ship = Backbone.View.extend({
     var ship = this.model;
     var state = ship.state;
     this.el.width = this.images.idle.width
-    this.el.height = this.images.idle.height
+    this.el.height = this.images.idle.height + 100
 
     if(translation){
       con.save()
