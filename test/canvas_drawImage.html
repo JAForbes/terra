@@ -1,0 +1,17 @@
+<h1>Canvas drawImage</h1>
+<a href='../test'>Back</a>
+<img id='idle' src='../img/ship2/idle.png' style='display:none'></img>
+<canvas id='can'></canvas>
+<script>
+/*jshint asi:true */
+con = can.getContext('2d')
+loop = function(){
+	con.save()
+	can.width = idle.width
+	can.height = idle.height
+	con.drawImage(idle,Math.random() * 100,Math.random() * 100)
+	requestAnimationFrame(loop)
+	con.restore()
+}
+loop()
+</script>

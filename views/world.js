@@ -79,6 +79,18 @@ Views.World = Backbone.View.extend({
     })
     this.$el.append(views.choices.el)
 
+    loop = function(){
+      views.ship1.update(i,views.ship2)
+      views.ship2.update(i,views.ship1)
+      i++;
+      requestAnimationFrame(loop)
+
+      if(music.currentTime > music.duration*0.495) {
+        music.currentTime = 0
+        music.play()
+      }
+    }
+    loop()
   },
 
   allImagesLoaded: _.after(numberOfShips = 2,function(){

@@ -6,7 +6,7 @@ Views.Ship = Backbone.View.extend({
   initialize: function(options){
     this.loadImages()
 
-
+    this.sounds = options.sounds
 
     this.shakes = 0;
     this.model.on('change:damaged', function(model){
@@ -29,9 +29,8 @@ Views.Ship = Backbone.View.extend({
     })
   },
 
-  update: function(i){
-
-
+  update: function(i,other){
+    if(other.sounds.shoot.paused){ this.shakes = 0}
     if( this.shakes > 0  && i % 1 == 0){
       this.shake()
       this.shakes--;
@@ -70,12 +69,12 @@ Views.Ship = Backbone.View.extend({
 
 
   render: function(translation){
+    translation = translation || [0,0]
     var con = this.el.getContext('2d')
     var ship = this.model;
     var state = ship.state;
-    this.el.width = this.images.idle.width/4
-    this.el.height = this.images.idle.height/4
-    con.scale(0.25,0.25)
+    this.el.width = this.images.idle.width
+    this.el.height = this.images.idle.height
 
     if(translation){
       con.save()
