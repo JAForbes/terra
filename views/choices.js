@@ -22,7 +22,7 @@ Views.Choice = Backbone.View.extend({
   className: 'choice',
 
   initialize: function(options){
-    this.el.innerText = options.text;
+    this.$el.text(options.text);
     this.enabled = true;
     this.$el.css({ width: 40, height: 40})
     options.model.on('change:energy', function(){
