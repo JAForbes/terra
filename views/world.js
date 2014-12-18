@@ -58,12 +58,16 @@ Views.World = Backbone.View.extend({
     views.end = new Views.End()
     this.$el.append(views.end.el)
 
-    this.$el.css({
-      width: window.innerWidth,
-      height: window.innerHeight,
-      position: 'absolute'
-    })
+    $(window).resize(resize.bind.this);
 
+    function resize(){
+      this.$el.css({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        position: 'absolute'
+      })
+
+    }
 
     models.ship1.on('dead', function(){
       localStorage.setItem('losses', (localStorage.getItem('losses')*1)+1 )
